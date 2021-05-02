@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MVVMApp</string>
+    <string name="quote_format">\"%s\"</string>
+    <string name="next">Next</string>
 </resources>

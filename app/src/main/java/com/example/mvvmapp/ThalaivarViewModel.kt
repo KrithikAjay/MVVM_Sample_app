@@ -6,7 +6,9 @@ import androidx.lifecycle.ViewModel
 import kotlin.random.Random
 
 class ThalaivarViewModel : ViewModel() {
-   var quote= MutableLiveData<String>()
+    private val _quote = MutableLiveData<String>()
+   val quote: LiveData<String>
+   get() = _quote
     lateinit var quoteList:MutableList<String>
 
 
@@ -40,16 +42,17 @@ class ThalaivarViewModel : ViewModel() {
     init {
 
         getListOfQuotes()
+        nextWord()
 
 
     }
 
     fun nextWord() {
-        //Select and remove a word from the list
+
         if (quoteList.isEmpty()) {
             getListOfQuotes()
         }
-        quote.value = quoteList.removeAt(0)
+        _quote.value = quoteList.removeAt(0)
 
     }
 
