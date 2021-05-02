@@ -35,13 +35,7 @@ class MainActivity : AppCompatActivity() {
 
         viewObj =ViewModelProvider(this).get(ThalaivarViewModel::class.java)
         binding.lifecycleOwner = this
-        viewObj.quote.observe(this, Observer { quote ->
-            binding.textView.text = "${quote.toString()}"
-
-        })
-        binding.button.setOnClickListener{
-            viewObj.nextWord()
-        }
+        binding.thalaivarViewModel = viewObj
 
 
 
